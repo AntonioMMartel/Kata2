@@ -5,23 +5,27 @@ import java.util.Map;
 
 /**
  * @author Antonio Miguel Martel
+ * T de type
  */
-public class Histogram {
+public class Histogram<T> {
     
-    int[] data;
+    // Todos los int[] por T[].
+    // Eso hace que en vez de entrarme ints me entran objetos cualquiera.
+    T[] data;
 
-    public Histogram(int[] data) {
+    public Histogram(T[] data) {
         this.data = data;
     }
 
-    public int[] getData() {
+    public T[] getData() {
         return data;
     }
-
-    public Map<Integer, Integer> getHistogram(){
+    
+    //Cambiamos el tipo Integer por un tipo T
+    public Map<T, Integer> getHistogram(){
         
-        HashMap<Integer, Integer> histogram =new HashMap<>();
-        for (int key : data) {
+        HashMap<T, Integer> histogram =new HashMap<>();
+        for (T key : data) {
             histogram.put(key, histogram.containsKey(key) ? histogram.get(key) + 1 : 1);
         }
         
