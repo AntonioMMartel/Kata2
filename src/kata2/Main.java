@@ -23,18 +23,14 @@ public class Main {
         }
         data[15] = 1;
         HashMap<Integer, Integer> histogram =new HashMap<>();
-        for (int i = 0; i < data.length; i++) {
-            // Un mapa devuelve null si no lo encuentra
-            Integer estoyEnHistograma = histogram.get(data[i]);
-            // Si no esta solo tengo 1
-            if( estoyEnHistograma == null){
-                histogram.put(data[i], 1);
-            } else {
-                //Si si esta sumo 1 a los que ya tenia.
-                histogram.put(data[i], histogram.get(data[i])+1);
-            }
-
-            System.out.println(data[i] + "==>" + histogram.get(data[i]));
+        // WOW
+        // Para cada valor key que esta en data: key toma cada valor del array data
+        for (int key : data) {
+            // En este operador ternario:
+            // El operador ternario esta dentro del put. Si lo contiene le suma 1
+            //A su indice y si no, inicializa su indice a 1.
+            histogram.put(key, histogram.containsKey(key) ? histogram.get(key) + 1 : 1);
+            System.out.println(key + "==>" + histogram.get(key));
         }
         
         
