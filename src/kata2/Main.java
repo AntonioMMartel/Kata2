@@ -16,7 +16,8 @@ public class Main {
 
 
     public static void main(String[] args) {
-        System.out.println("Hola soy la kata 2");
+        System.out.println("Hola soy la kata 2 version 4");
+        
         
         Integer[] data = new Integer[16];
         for (int i = 0; i < data.length; i++) {
