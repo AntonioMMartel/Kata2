@@ -7,6 +7,7 @@
 package kata2;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author Antonio Miguel Martel
@@ -22,18 +23,12 @@ public class Main {
             data[i] = i+ 1;
         }
         data[15] = 1;
-        HashMap<Integer, Integer> histogram =new HashMap<>();
-        // WOW
-        // Para cada valor key que esta en data: key toma cada valor del array data
+        
+        Histogram histo = new Histogram(data);
+        Map<Integer,Integer> histogr = histo.getHistogram();
         for (int key : data) {
-            // En este operador ternario:
-            // El operador ternario esta dentro del put. Si lo contiene le suma 1
-            //A su indice y si no, inicializa su indice a 1.
-            histogram.put(key, histogram.containsKey(key) ? histogram.get(key) + 1 : 1);
-            System.out.println(key + "==>" + histogram.get(key));
+            System.out.println(key + "==>" + histogr.get(key));
         }
-        
-        
         
     }
 
