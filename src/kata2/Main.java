@@ -19,15 +19,11 @@ public class Main {
         System.out.println("Hola soy la kata 2 version 4");
         
         
-        Integer[] data = new Integer[16];
-        for (int i = 0; i < data.length; i++) {
-            data[i] = i+ 1;
-        }
-        data[15] = 1;
+        String[] data = {"Rosa", "Pepe", "María", "Pepe", "Pepe", "Rosa"};
         
         Histogram histo = new Histogram(data);
         Map<Integer,Integer> histogr = histo.getHistogram();
-        for (int key : data) {
+        for (String key : data) {
             System.out.println(key + "==>" + histogr.get(key));
         }
         
